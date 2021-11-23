@@ -30,14 +30,14 @@ We use React and Django in our real application, feel comfortable to chose the a
   - Real estate agency registration data
   - Company registration data
   - Contact registration data
-  - Describe what needs to be changed on the API you implemeted
+  - Describe what needs to be changed on the API you implemented
 - One web page, following the low fidelity prototype presented on the **Resources**
   - Table with orders data, allowing the user to order the results by each column
   - Button to open modal to create new order
   - Allow row click to open modal to visualize order details
 - Modal to input data to create new order
   - Form with appropriate inputs to handle each type of data
-  - Allow selection of registered cateories from the database
+  - Allow selection of registered categories from the database
   - Save button to hit backend service and store the data
 - Modal to read only the order details
 
