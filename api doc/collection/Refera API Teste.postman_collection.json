@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "afce9617-470a-4a19-a758-3e63f6c30f11",
+		"name": "Refera API Teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "order_description",
+									"value": "diosad dlknsad lskandsa dklsndlaks ",
+									"type": "default"
+								},
+								{
+									"key": "real_state_agency",
+									"value": "kl klnfl d",
+									"type": "default"
+								},
+								{
+									"key": "company",
+									"value": "consi",
+									"type": "default"
+								},
+								{
+									"key": "dead_line",
+									"value": "2021-02-02",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "contact_name",
+									"value": "Adriano",
+									"type": "default"
+								},
+								{
+									"key": "contact_tel",
+									"value": "(11) 09872-2111",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/order/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order/del/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"del",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "company",
+									"value": "Consistech, SA",
+									"type": "default"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/order/put/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"put",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/categories/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/del/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"del",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
