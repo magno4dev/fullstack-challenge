@@ -1,0 +1,68 @@
+public function updatePatient(Request $request){
+
+$id = $request->id;
+
+DB::table('paciente')
+->where('id', $id)
+->update([
+'nome' => $request->nome,
+'data_de_nascimento' => $request->data_de_nascimento,
+'telefone' => $request->telefone,
+'morada' => $request->morada,
+]);
+
+return true;
+}
+
+public function deleteItem(Request $request){
+    $id = $request->id;
+    
+    DB::table('paciente')
+        ->where('id',$id)
+        ->delete();
+}
+
+public function pesquisarPaciente(Request $request){
+
+try{
+    DB::beginTransaction();
+    $dados = $request->pesquisa;
+
+    $vazio = array();
+    if($dados){
+
+       /*$pacientes = DB::table('paciente')->where('nome', 'like', '%'.$dados.'%')
+                ->orwhere('apelido', 'like', '%'.$dados.'%')->limit(4)->get();*/
+
+    $pacientes = DB::select('SELECT p.*, u.* FROM pessoa p 
+            INNER JOIN utente u ON u.pessoa = p.id WHERE p.idnome','like','%'.$dados.'%');
+
+                if(sizeof($pacientes) > 0){
+                    $response = [
+                    'status' => true,
+                    'message' => 'pesquisa pacientes successful!',
+                    'data' => [
+                        'dados_pacientes' => $pacientes,
+                    ]
+                ];
+                }else{
+                        $response_error = [
+                            'status' => false,
+                            'message' => 'Nenhum resultado encontrado',
+                            'data' =>[
+
+                                'dados_pacientes' => $vazio,
+                                
+                            ]
+                        ]; 
+                        return $response_error;
+                }
+    }
+    DB::commit();
+    return response($response);
+}catch(Exception $e){
+    DB::rollback();
+    return response(['status' => false, 'message' => 'sem resultado'], 401);
+}  
+}
+
