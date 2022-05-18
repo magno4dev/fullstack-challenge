@@ -16,16 +16,6 @@ dist/
 # Log files
 *.log
 
-# Package files
-*.jar
-
-# Maven
-target/
-dist/
-
-# JetBrains IDE
-.idea/
-
 # Unit test reports
 TEST*.xml
 
@@ -46,13 +36,4 @@ Thumbs.db
 *.avi
 *.flv
 *.mov
-*.wmv
-
-open-seguro-ejb/build/
-open-seguro-war/build/
-lib/
-build/
-open-seguro-ejb/nbproject/
-open-seguro-war/nbproject/
-nbproject/
-setup/
+*.wmv   
